@@ -1,0 +1,20 @@
+{
+  "name": "sequelize-module-exercise-impl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "continuation-local-storage": "^3.2.1",
+    "pg": "^7.11.0",
+    "sequelize": "^5.9.4"
+  },
+  "devDependencies": {
+    "@types/sequelize": "^4.28.3"
+  }
+}
