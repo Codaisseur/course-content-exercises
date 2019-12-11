@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": null,
-    "database": "migrations_training",
+    "database": "database_development",
     "host": "localhost",
     "dialect": "postgres",
     "operatorsAliases": false
