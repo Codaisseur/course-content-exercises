@@ -6,16 +6,16 @@ module.exports = {
       "Users",
       [
         {
-          firstName: "Matias",
-          lastName: "Garcia",
+          name: "Matias",
           email: "matias@codaisseur.com",
+          phone: 12345678,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          firstName: "Leo",
-          lastName: "Messi",
+          name: "Leo",
           email: "leo@bcn.com",
+          phone: 12345678,
           createdAt: new Date(),
           updatedAt: new Date()
         }
