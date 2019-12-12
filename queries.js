@@ -37,21 +37,21 @@ getTodoItems().then(result => console.log(result));
 
 async function getUserByPk(key) {
   const user = await User.findByPk(key);
-  return user || "Not found!";
+  return user ? user.get({ plain: true }) : "Not found!";
 }
 
-getUserByPk().then(result => console.log(result));
+getUserByPk(2).then(result => console.log(result));
 
 async function newUser({ name, email, phone }) {
   const newUser = await User.create({ name, email, phone });
   return newUser.get({ plain: true });
 }
 
-newUser().then(result => console.log(result));
+// newUser().then(result => console.log(result));
 
 async function importantTodos() {
   const todos = await TodoItem.findAll({ where: { important: true } });
   return todos.map(todo => todo.get({ plain: true }));
 }
 
-mportantTodos().then(result => console.log(result));
+importantTodos().then(result => console.log(result));
