@@ -1,10 +1,15 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const TodoList = sequelize.define('TodoList', {
-    name: DataTypes.STRING
-  }, {});
+  const TodoList = sequelize.define(
+    "TodoList",
+    {
+      name: DataTypes.STRING
+    },
+    {}
+  );
   TodoList.associate = function(models) {
-    // associations can be defined here
+    TodoList.belongsTo(models.User);
+    TodoList.hasMany(models.TodoItem);
   };
   return TodoList;
 };

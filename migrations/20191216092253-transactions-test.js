@@ -12,7 +12,7 @@ module.exports = {
       await queryInterface.addColumn(
         "Users",
         "street",
-        { type: Sequelize.ANYTHING },
+        { type: Sequelize.STRING },
         { transaction: t }
       );
     });
