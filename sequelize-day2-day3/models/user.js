@@ -5,7 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       name: DataTypes.STRING,
       email: { type: DataTypes.STRING, unique: true },
-      phone: DataTypes.INTEGER
+      phone: DataTypes.INTEGER,
+      city: DataTypes.STRING,
+      street: DataTypes.STRING
     },
     {}
   );
