@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Image.associate = function(models) {
-    Image.belongsTo(models.user);
+    Image.belongsTo(models.User);
   };
   return Image;
 };
