@@ -12,7 +12,7 @@ describe("sumNumbers", () => {
       expect(sumNumbers(a, b)).toEqual(expected);
     });
   });
-  describe.skip("when given invalid or wrong type values", () => {
+  describe("when given invalid or wrong type values", () => {
     test("should not return a Number", () => {
       expect(sumNumbers("hi", "you")).not.toBeInstanceOf(Number);
     });
