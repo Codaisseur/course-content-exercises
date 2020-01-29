@@ -23,8 +23,8 @@ class DevelopersList extends React.Component {
         ) : (
           <div>
             <p>We have {this.props.devs.count} developers!</p>
-            {this.props.devs.rows.map(dev => (
-              <Developer dev={dev} />
+            {this.props.devs.rows.map((dev, i) => (
+              <Developer dev={dev} key={i} />
             ))}
           </div>
         )}
