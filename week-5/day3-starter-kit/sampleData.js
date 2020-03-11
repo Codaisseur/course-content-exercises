@@ -1,4 +1,4 @@
-const TodoItem = require("./models").todoItem;
+const TodoItem = require("./models").TodoItem;
 
 async function createSampleTodoItems() {
   try {
