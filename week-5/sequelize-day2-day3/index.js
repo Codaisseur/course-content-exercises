@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const PORT = 4002;
 
-const User = require("./models").User;
-const TodoList = require("./models").TodoList;
+const User = require("./models").user;
+const TodoList = require("./models").todoList;
 
 app.use(express.json());
 
