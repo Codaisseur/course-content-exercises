@@ -12,5 +12,5 @@ module.exports = (sequelize, DataTypes) => {
   todoItem.associate = function(models) {
     // associations can be defined here
   };
-  return TodoItem;
+  return todoItem;
 };
