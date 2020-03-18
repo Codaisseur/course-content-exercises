@@ -1,18 +1,20 @@
 const express = require("express");
-
-const authMiddleware = require("./auth/middleware");
 const userRouter = require("./routers/user");
 const imageRouter = require("./routers/image");
 const authRouter = require("./routers/auth");
-const PORT = process.env.PORT || 4002;
+const authMiddleware = require("./auth/middleware");
 
+const PORT = process.env.PORT || 4000;
 const app = express();
-const jsonParser = express.json();
 
+// Middlewares
+const jsonParser = express.json();
 app.use(jsonParser);
 
-app.use("/", authRouter);
+// Routers
 app.use("/users", userRouter);
 app.use("/images", authMiddleware, imageRouter);
+app.use("/", authRouter);
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// Start server
+app.listen(PORT, () => console.log("App listening"));

@@ -1,8 +1,8 @@
 const bcrypt = require("bcrypt");
 const { Router } = require("express");
-const { toJWT, toData } = require("../auth/jwt");
+const { toJWT } = require("../auth/jwt");
 const authMiddleware = require("../auth/middleware");
-const User = require("../models").User;
+const User = require("../models").user;
 
 const router = new Router();
 
@@ -11,10 +11,9 @@ router.post("/login", async (req, res, next) => {
   if (!email || !password) {
     res.status(400).send("Please supply a valid email and password");
   } else {
+    // 1. look for the user by email
     const user = await User.findOne({
-      where: {
-        email: email
-      }
+      where: { email }
     });
     if (!user) {
       res.status(400).send({
