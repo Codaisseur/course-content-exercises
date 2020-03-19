@@ -22,7 +22,7 @@ router.post("/", async (req, res, next) => {
   const { url, title } = req.body;
 
   if (!url || !title) {
-    res.status(406).send("missing parameters")
+    res.status(406).send("missing parameters");
   }
   // create a new image
   const newImage = await Image.create({ title, url });
@@ -30,7 +30,7 @@ router.post("/", async (req, res, next) => {
 });
 
 // image by id
-router.get("/:id", (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
   // get id param
   const { id } = req.params;
   console.log("id", id);
@@ -40,14 +40,14 @@ router.get("/:id", (req, res, next) => {
     const image = await Image.findByPk(id);
     // check if image exists
     if (!image) {
-      res.status(404).send("No image found")
+      res.status(404).send("No image found");
     } else {
       // send it back
       res.json(image);
     }
   } catch (e) {
-    next(e)
+    next(e);
   }
-})  
+});
 
 module.exports = router;
