@@ -1,10 +1,22 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import Game from "./components/Game";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import GameScreen from "./components/Game";
 import HomeScreen from "./components/HomeScreen";
+import AboutScreen from "./components/AboutScreen";
 
+const Tab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
+
+function GameTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name='Play' component={GameScreen} />
+      <Tab.Screen name='About' component={AboutScreen} />
+    </Tab.Navigator>
+  );
+}
 
 function App() {
   return (
@@ -20,7 +32,7 @@ function App() {
         }}
       >
         <Stack.Screen name='Home' component={HomeScreen} />
-        <Stack.Screen name='Game' component={Game} />
+        <Stack.Screen name='Game' component={GameTabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );

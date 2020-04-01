@@ -13,7 +13,7 @@ export default function Game({ route, navigation }) {
       setPos(({ x, y }) => {
         return {
           x: constrain(x - 30 * data.x, 15, 300 - 15),
-          y: constrain(y + 30 * data.y, 15, 300 - 15)
+          y: constrain(y + 30 * data.y, 15, 250 - 15)
         };
       });
     });
@@ -41,7 +41,7 @@ export default function Game({ route, navigation }) {
           marginTop: 24,
           position: "relative",
           width: 300,
-          height: 300,
+          height: 250,
           borderColor: "#eee",
           borderWidth: 2
         }}
