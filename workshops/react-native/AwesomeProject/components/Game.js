@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Text, View } from "react-native";
+import { Text, View, Button } from "react-native";
 import { Accelerometer } from "expo-sensors";
 import MyButton from "./MyButton";
 
-export default function Game() {
+export default function Game({ route, navigation }) {
   const [data, setData] = useState({});
   const [pos, setPos] = useState({ x: 150, y: 150 });
   useEffect(() => {
@@ -23,9 +23,13 @@ export default function Game() {
     };
   }, []);
   let { x, y, z } = data;
+  const { count } = route.params;
   return (
     <View style={{ marginVertical: 60, marginHorizontal: 28 }}>
       <Text style={{ fontWeight: "bold", fontSize: 30 }}>Accelerometer</Text>
+      <Text style={{ fontWeight: "bold", fontSize: 20 }}>
+        Times i've been here: {count}
+      </Text>
       <Text style={{ fontSize: 16, marginTop: 8 }}>
         (in Gs where 1 G = 9.81 m s^-2)
       </Text>
@@ -54,7 +58,11 @@ export default function Game() {
           }}
         />
       </View>
-      <MyButton text={"Super button"} />
+      {/* <MyButton text={"Super button"} /> */}
+      <Button
+        title='Go to Home'
+        onPress={() => navigation.navigate("Home", { count: count + 1 })}
+      />
     </View>
   );
 }
