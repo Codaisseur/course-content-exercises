@@ -10,6 +10,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "0.1.6",
     "@react-navigation/native": "^5.1.4",
+    "@react-navigation/stack": "^5.2.9",
     "expo": "~37.0.3",
     "expo-sensors": "~8.1.0",
     "react": "~16.9.0",
