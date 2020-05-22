@@ -5,12 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       task: DataTypes.STRING,
       deadline: DataTypes.STRING,
-      important: DataTypes.BOOLEAN
+      important: DataTypes.BOOLEAN,
     },
     {}
   );
-  todoItem.associate = function(models) {
+  todoItem.associate = function (models) {
     // associations can be defined here
   };
-  return TodoItem;
+  return todoItem;
 };
