@@ -27,7 +27,7 @@ async function newUser({ name, email, phone }) {
   return newUser.get({ plain: true });
 }
 
-// newUser().then(result => console.log(result));
+// newUser({ name: 'rein', email: "rein@codaisseur.com", phone: 4232 }).then(result => console.log(result));
 
 async function importantTodos() {
   const todos = await TodoItem.findAll({ where: { important: true } });
