@@ -6,7 +6,6 @@ To make use of this starter kit you have to clone this repo. Then, delete all ot
 - `npm install`
 
 ```
-$ npx sequelize-cli db:create
 $ npx sequelize-cli db:migrate
 $ npx sequelize-cli db:seed:all
 ```
