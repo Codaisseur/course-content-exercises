@@ -50,7 +50,7 @@ app.get("/users/:userId/lists", async (req, res, next) => {
   try {
     const userId = parseInt(req.params.userId);
     const user = await User.findByPk(userId, {
-      include: [TodoList]
+      include: [TodoList],
     });
     if (user) {
       res.send(user.TodoLists);

@@ -2,55 +2,55 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return await queryInterface.bulkInsert(
+    await queryInterface.bulkInsert(
       "todoItems",
       [
         {
           task: "Finish Reports",
-          important: false,
+          important: true,
           deadline: "20/3/2020",
+          todoListId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
-          todoListId: 1
         },
         {
           task: "Plan Birthday",
           important: true,
           deadline: "20/3/2020",
+          todoListId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
-          todoListId: 2
         },
         {
           task: "Go swimming",
           important: false,
           deadline: "20/3/2020",
+          todoListId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
-          todoListId: 2
         },
         {
           task: "Practice freekicks",
           important: false,
           deadline: "20/3/2020",
+          todoListId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
-          todoListId: 3
         },
         {
           task: "Score 60+ goals",
-          important: true,
+          important: false,
           deadline: "20/3/2020",
+          todoListId: 3,
           createdAt: new Date(),
           updatedAt: new Date(),
-          todoListId: 3
-        }
+        },
       ],
       {}
     );
   },
 
   down: async (queryInterface, Sequelize) => {
-    return await queryInterface.bulkDelete("todoItems", null, {});
-  }
+    await queryInterface.bulkDelete("todoItems", null, {});
+  },
 };
