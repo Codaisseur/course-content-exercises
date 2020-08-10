@@ -17,6 +17,7 @@ app.get("/users/:userId", async (req, res) => {
   }
 });
 
+console.log("change");
 app.post("/users", async (req, res, next) => {
   try {
     const email = req.body.email;
